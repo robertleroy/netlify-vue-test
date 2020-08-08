@@ -1,24 +1,41 @@
-# netlify-vue-test
+# [netlify-vue-test](https://robertleroy.github.io/netlify-vue-test/)
 
-## Project setup
-```
-npm install
-```
+1. [gh-pages](#vue-cli-plugin-gh-pages)
+2. [Netlify](#Netlify)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+<br>
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- ## [vue-cli-plugin-gh-pages](https://github.com/JaZo/vue-cli-plugin-gh-pages#readme)
+___
 
-### Lints and fixes files
-```
-npm run lint
+
+
+### Install
+``` js
+vue add gh-pages
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Usage
+``` js
+npm run gh-pages
+```
+
+### Options
+``` js
+// create 'vue.config.js' in root folder //
+
+module.exports = {
+    pluginOptions: {
+        ghPages: {
+            message: 'Updates',
+        },
+    },
+};
+```
+supports all [gh-pages options](https://github.com/tschaub/gh-pages#options)
+
+<br>
+
+- ## [Netlify]()
+___
+
