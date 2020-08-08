@@ -1,0 +1,178 @@
+// forms.scss v-0.2 //
+
+// #region Forms ================== //
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; 
+  touch-action: manipulation; 
+}
+
+// BORDERS are being set with box-shadow //
+button,
+input,
+select,
+textarea {
+  font-family: inherit; 
+  font-size: var(--h7);
+  line-height: inherit; 
+  letter-spacing: inherit; 
+
+  color: inherit; 
+  background-color: transparent; 
+  background-color: rgba(255,255,255,0); 
+  border: 0 solid; 
+  outline: none;
+  margin: 0;
+
+  padding: 0.25em 0.5em; 
+  border-radius: 0.25rem;   
+  box-shadow: 0px 0px 0px 1px inset var(--gray-500);
+  
+  overflow: hidden;  
+  transition: all 0.1s;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {  
+  text-transform: none;
+  -webkit-appearance: none;
+  outline: none;
+  user-select: none;
+  border-radius: 0.25rem; 
+
+  cursor: pointer;
+
+  &:hover {
+    color: var(--gray-500);
+  }
+  &:active {
+    box-shadow:
+    0 0 0 1px inset var(--gray-800);
+  }  
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+}
+
+[type="text"], [type="email"],
+[type="search"], [type="tel"],
+[type="url"], [type="password"],
+textarea {
+  min-width: 3rem;
+
+  &:focus {
+    // box-shadow: 0px 0px 0px 1px inset var(--gray-800);
+    box-shadow: 0 0 0 1px inset var(--lightBlue-800);
+  }
+}
+
+input[type=checkbox] {
+  box-shadow: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+select {
+  position: relative;
+  height: 2.583334rem;
+  display: inline-block;
+  text-transform: none;
+  -webkit-appearance: menulist-button;  
+  cursor: pointer;
+
+  @include media (640px) {
+    height: 2.576923rem;
+  }
+  @include media (800px) {
+    height: 2.571429rem;
+  }
+  @include media (1600px) {
+    height: 2.566667rem;
+  }
+}
+
+// misc.
+optgroup {
+  font-size: var(--h7);
+}
+
+::-webkit-input-placeholder {
+ color: inherit;
+ opacity: 0.54;
+}
+
+:-moz-focusring {
+ outline: 1px dotted $fontColor;
+}
+
+
+// styled // 
+
+/* ========== SELECT WRAP ========== 
+<div class="selectWrap">  
+  <select class="select">
+    <option value="1" >One</option>
+    <option value="2" >Two</option>
+    <option value="3" >Three</option>
+  </select>
+</div>
+*/
+.selectWrap {
+  position: relative;
+  display: block;
+  width: fit-content;
+  pointer-events: none;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+	  height: 0;
+    top: 1.2rem;
+    right: 0.4rem;
+    border-left: 0.4rem solid transparent;
+    border-right: 0.4rem solid transparent;
+    border-top: 0.4rem solid black;
+  }
+
+  select {    
+    padding-right: 1.2rem;
+    pointer-events: initial;  
+  }
+}
+
+
+
+// <input type="text" class="open" placeholder="text">
+input.open {  
+  border-radius: 0;
+  box-shadow: 
+  0px -1px 0 0  inset rgba(0,0,0,0.5);
+
+  &:focus {
+    // box-shadow: 0px 0px 0px 1px inset var(--gray-800);
+    box-shadow: 0px -1px 0 0  inset var(--lightBlue-800);
+  }
+}
+
+
+
+
+
+
+
+// #endregion Forms ================== //
+

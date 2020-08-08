@@ -1,0 +1,97 @@
+// helpers.scss  v-0.2 //
+// #region Helper classes ================== //
+
+[v-cloak] {
+  position: relative;
+
+  > * { display:none }
+  &::before { 
+    content: "loading…";
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+  }
+}
+
+.btn, [btn] {
+  cursor: pointer;
+
+  &:hover {
+    // color: var(--gray-700);
+    opacity: 0.8;
+  }
+  &:active {    
+    // color: var(--gray-500);
+    opacity: 0.6;
+  }  
+}
+
+.subtitle {
+  color: var(--muted-8);
+  font-weight: normal;
+}
+
+.border {
+  border: 1px dashed cyan;
+}
+
+.router-link-active, .active {
+  // color: complement($linkColor);
+  color: var(--vue-green);
+
+  @extend .btn;
+}
+
+[class*="-active"] {
+	transition: 0.1s
+}
+
+.upper {
+  font-kerning: normal;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.small-caps {
+  font-feature-settings: 'smcp', 'kern';
+  font-kerning: normal;
+  letter-spacing: 0.1rem;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+
+svg-icon {
+  font-size: var(--h3);
+  color: $fontColor;
+  border: none;
+  outline: none;
+  user-select: none;
+  
+  cursor: pointer;
+
+  @extend .btn;
+}
+// #endregion Helper classes ================== //
+
+
+// #region Animation ================== //
+
+.slideRight-enter,
+.slideRight-leave-to {
+	transform: translateX(-100vw)
+}
+
+.slideLeft-enter,
+.slideLeft-leave-to {
+	transform: translateX(100vw)
+}
+
+.fade-enter,
+.fade-leave-to {
+	opacity: 0
+}
+// #endregion Animation ================== //
+
